@@ -35,20 +35,20 @@ function Home() {
     <div className="container">
       <form>
         <h1>Dream Tracker</h1>
-        <input date="date" type="text" />
-        <input name="sleep at" type="number" />
-        <input name="woke up" type="number" />
-        <input note="note" type="text" />
+        <input placeholder='Date'date="date" type="text" />
+        <input placeholder='Sleep At' name="sleep at" type="number" />
+        <input placeholder='Woke Up' name="woke up" type="number" />
+        <input placeholder='Note' note="note" type="text" />
         <button type="button">Register</button>
       </form>
      
        {user.map(user =>(
-         <div key={user.id}>
+         <div key={user.id} className='card'>
          <div>
-           <p>Sleep at: {user.sleep_time}</p>
-           <p>Woke up at: {user.wake_time}</p>
-           <p>Duration: {user.duration}</p>
-           <p>7 Days Average: {user.id}</p>
+           <p>Sleep at: <span>{user.sleep_time}</span></p>
+           <p>Woke up at: <span>{user.wake_time}</span></p>
+           <p>Duration: <span>{user.duration}</span></p>
+           <p>7 Days Average: <span>{user.id}</span></p>
           
          </div>
          <button>

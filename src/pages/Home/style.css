@@ -30,9 +30,50 @@ form {
         border: none;
         font-weight: bold;
         cursor: pointer;
+        font-size: 14px;
+        color: white;
     }
 
     & button:hover {
         opacity: 0.8 ;
     }
+
+    & input {
+        border: 1px solid black;
+        border-radius: 30px;
+        height: 40px;
+        background-color: #363653;
+        color: #fff;
+        font-size: 16px;
+        padding-left: 10px;
+        outline:none ;
+
+    }
+}
+
+
+.card {
+
+  display: flex;
+  justify-content: space-between;
+  background-color: #2E2D4E;
+  margin: 10px;
+  padding: 10px;
+  width: 400px;
+  border-radius: 10px;
+  & p {
+      color: #fff;
+      font-weight: bold;
+  } & span {
+    font-weight: normal;
+  }
+  & button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  } 
+  & button:hover {
+    opacity: 0.8;
+    color: red;
+  }
 }
