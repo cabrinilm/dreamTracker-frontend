@@ -2,34 +2,20 @@ import "./style.css";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import api from "../../services/api";
+import  { useEffect, useState }  from 'react';
 
 function Home() {
-  const user = [
-    {
-      id: "123",
-      date: "23/10/20",
-      sleep_time: "23:00",
-      wake_time: "08:00",
-      duration: "9",
-      notes: "early",
-    },
-    {
-      id: "113",
-      date: "23/10/20",
-      sleep_time: "23:00",
-      wake_time: "08:00",
-      duration: "9",
-      notes: "early",
-    },
-    {
-      id: "133",
-      date: "23/10/20",
-      sleep_time: "23:00",
-      wake_time: "08:00",
-      duration: "9",
-      notes: "early",
-    }
-  ];
+  let users = [];
+
+  async function getUsers() {
+    users = await api.get('/dreamTracker')
+    
+  }
+
+  useEffect(() => {
+    getUsers()
+  }, [])
 
   return (
     <div className="container">
@@ -42,7 +28,7 @@ function Home() {
         <button type="button">Register</button>
       </form>
      
-       {user.map(user =>(
+       {users.map(user =>(
          <div key={user.id} className='card'>
          <div>
            <p>Sleep at: <span>{user.sleep_time}</span></p>
