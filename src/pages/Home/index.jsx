@@ -6,11 +6,15 @@ import api from "../../services/api";
 import  { useEffect, useState }  from 'react';
 
 function Home() {
-  let users = [];
+  const [users, setUsers] = useState([])
 
   async function getUsers() {
-    users = await api.get('/dreamTracker')
-    
+    const response = await api.get('/dreamTracker', {
+      headers: {
+        'Cache-Control': 'no-cache',
+      },
+    });
+   setUsers(response.data)
   }
 
   useEffect(() => {
