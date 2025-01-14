@@ -31,8 +31,8 @@ function Home() {
         <input placeholder='Note' note="note" type="text" />
         <button type="button">Register</button>
       </form>
-     
-       {users.map(user =>(
+       <div class="card-container">
+       {users.slice(-7).map(user =>(
          <div key={user.id} className='card'>
          <div>
            <p>Sleep at: <span>{user.sleep_time}</span></p>
@@ -47,7 +47,7 @@ function Home() {
        </div>
         
       ))}
-      
+      </div>
     </div>
   );
 }
