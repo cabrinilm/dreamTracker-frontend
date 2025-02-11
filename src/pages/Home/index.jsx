@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import api from "../../services/api";
 import  { useEffect, useState }  from 'react';
+import { Register } from "../../components/Register";
 
 function Home() {
   const [users, setUsers] = useState([])
@@ -30,6 +31,7 @@ function Home() {
         <input placeholder='Woke Up' name="woke up" type="number" />
         <input placeholder='Note' note="note" type="text" />
         <button type="button">Register</button>
+        <Register />
       </form>
        <div class="card-container">
        {users.slice(-7).map(user =>(
