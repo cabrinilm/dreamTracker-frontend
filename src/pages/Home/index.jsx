@@ -24,16 +24,11 @@ function Home() {
 
   return (
     <div className="container">
-      <form>
+      
         <h1>Dream Tracker</h1>
-        <input placeholder='Date'date="date" type="text" />
-        <input placeholder='Sleep At' name="sleep at" type="number" />
-        <input placeholder='Woke Up' name="woke up" type="number" />
-        <input placeholder='Note' note="note" type="text" />
-        <button type="button">Register</button>
         <Register />
-      </form>
-       <div class="card-container">
+      
+       <div className="cardcontainer">
        {users.slice(-7).map(user =>(
          <div key={user.id} className='card'>
          <div>

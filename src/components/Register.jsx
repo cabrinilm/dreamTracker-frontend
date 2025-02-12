@@ -1,33 +1,54 @@
-
-import { useState } from "react"
-
+import { useState } from "react";
 
 export function Register() {
+  const [register, setRegister] = useState({
+    date: "",
+    sleepAt: "",
+    wokeUp: "",
+    note: "",
+  });
 
-   const [register, setRegister] = useState("")
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
- return (
-  
+    setRegister((prevRegister) => ({
+      ...prevRegister,
+      [name]: value,
+    }));
+  };
+
+  return (
     <div>
-     <input 
-      type="text"
-      value={register}
-      onChange={(e) => {
+      <input
+        placeholder="Date"
+        name="date"
+        type="text"
+        value={register.date}
+        onChange={handleChange}
+      />
+      <input
+        placeholder="Sleep At"
+        name="sleepAt"
+        type="number"
+        value={register.sleepAt}
+        onChange={handleChange}
+      />
+      <input
+        placeholder="Woke Up"
+        name="wokeUp"
+        type="number"
+        value={register.wokeUp}
+        onChange={handleChange}
+      />
+      <input
+        placeholder="Note"
+        name="note"
+        type="text"
+        value={register.note}
+        onChange={handleChange}
+      />
 
-        setRegister(e.target.value);
-      }}
-
-     />
- 
-
-
-
+      <button onClick={() => console.log(register)}>Register</button>
     </div>
-
-
-
- )
-
-
-
+  );
 }
